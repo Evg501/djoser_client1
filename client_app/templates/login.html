@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вход</title>
+</head>
+<body>
+    <h2>Войти</h2>
+    {% if messages %}
+        {% for message in messages %}
+            <div>{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Имя пользователя" required><br>
+        <input type="password" name="password" placeholder="Пароль" required><br>
+        <button type="submit">Войти</button>
+    </form>
+    <p><a href="#">Зарегистрироваться</a></p>
+</body>
+</html>
